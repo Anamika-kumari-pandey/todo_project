@@ -25,7 +25,15 @@ SECRET_KEY = 'django-insecure-)ppz7&jmt47(-=7#4_+wa2+0r#hx^=pwv%-4cizxf_y)5y+zc$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
+
+ALLOWED_HOSTS = ['todo-project-8zol.onrender.com', 'localhost', '127.0.0.1']
+
+# Optional: also allow host from environment variable
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 
 # Application definition
