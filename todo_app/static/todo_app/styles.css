@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+}
+
+.add-task-form {
+    display: flex;
+    gap: 10px;
+}
+
+.add-task-form input {
+    flex: 1;
+}
+
+.add-task-form button {
+    width: 100px;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-task-form button:hover {
+    background-color: #00e676;
+}
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2, h1, h3 {
+    text-align: center;
+    color: #ffe6e6;
+}
+
+input, button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+input {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+button {
+    background-color: #ff4b2b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff416c;
+}
+
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #ccc;
+}
+
+.error {
+    color: #ffcccc;
+    text-align: center;
+}
+
+.success {
+    color: #ccffcc;
+    text-align: center;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}

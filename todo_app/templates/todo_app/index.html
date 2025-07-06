@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo List</title>
+     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'todo_app/styles.css' %}">
+
+</head>
+ <h2>Welcome, {{ user_name }}</h2>
+    <a href="/logout/">Logout</a>
+
+<div class="container">
+    <h1>ToDo List</h1>
+
+    <form method="POST" class="add-task-form">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Add new task" required>
+        <button type="submit">Add</button>
+    </form>
+
+    <!-- Your task list below -->
+</div>
+
+<body>
+    {% comment %} <h2>Welcome, {{ user_name }}</h2>
+    <a href="/logout/">Logout</a>
+
+    <h3>ToDo List</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Add new task" required>
+        <button type="submit">Add</button>
+    </form> {% endcomment %}
+
+    <ul>
+        {% for task in tasks %}
+            <li {% if task.completed %} style="text-decoration: line-through;" {% endif %}>
+                {{ task.title }}
+                {% if not task.completed %}
+                    <a href="/complete/{{ task.id }}/">✅ Complete</a>
+                {% endif %}
+                <a href="/delete/{{ task.id }}/">❌ Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
